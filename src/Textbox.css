@@ -1,0 +1,11 @@
+.textbox {
+    background-color: lightgray;
+}
+
+label {
+    color: #0081AF;
+}
+
+textarea {
+    border-color: #0081AF;
+}
