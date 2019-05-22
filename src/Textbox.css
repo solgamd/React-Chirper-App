@@ -6,3 +6,7 @@ label {
 textarea {
     border-color: #0081AF;
 }
+
+.promptText {
+    font-size: .5em;
+}

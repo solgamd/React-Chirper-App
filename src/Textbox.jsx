@@ -1,6 +1,6 @@
 import React from 'react';
 import './Textbox.css';
-
+import ChirpCorral from './ChirpCorral';
 
 class Textbox extends React.Component {
     constructor(props) {
@@ -14,19 +14,12 @@ class Textbox extends React.Component {
         this.setState({ text: e.target.value })
     }
 
-    handleClick() {                 ////////////////////////// TRYING FOR LOOP BEFORE MAP
-        let chirpCorral = [];
-        let chirpCard = <div className="chirpCard">{this.state.text}</div>;
-        // let chirpText = this.state.text;
-        for (let i = 0; i < chirpCorral.length; i++) {
-            chirpCorral.push(chirpCorral[i]);
-        }
-        chirpCorral.append(chirpCard);
-
+    handleClick() {      
         return (
-            <ul>{ chirpCorral }</ul>
+            <>
+        <ChirpCorral />      
+        </>
         )
-        
     }
 
     render() {
@@ -40,15 +33,16 @@ class Textbox extends React.Component {
                             id="validationTextarea"
                             placeholder="What's chirpin'?"
                             text=""
+                            value={this.state.text}
                             onChange={(e) => { this.handleChange(e) }}
                             required>
                         </textarea>
-                        <div className="invalid-feedback">
+                        <div className="invalid-feedback promptText">
                             Enter your chirp.
                         </div>
-                        <button 
-                        className="button"
-                        onClick={() => { this.handleClick()}}
+                        <button
+                            className="button"
+                            onClick={() => { this.handleClick() }}
                         >Post Chirp</button>
                     </div>
                 </form>
