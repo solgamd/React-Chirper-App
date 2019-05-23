@@ -1,8 +1,7 @@
 import React from 'react';
-import './Textbox.css';
-import ChirpCorral from './ChirpCorral';
+import './WriteNewChirp.css';
 
-class Textbox extends React.Component {
+class WriteNewChirp extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -10,22 +9,19 @@ class Textbox extends React.Component {
         }
     }
 
-    handleChange(e) {
-        this.setState({ text: e.target.value })
-    }
+    // handleChange(e) {
+    //     this.setState({ text: e.target.value })
+    // }
 
-    handleClick() {      
-        return (
-            <>
-        <ChirpCorral />      
-        </>
-        )
-    }
+    // handleClick(e) {     
+    //     e.preventDefault(); 
+    //     console.log('test');
+    // }
 
     render() {
         return (
             <>
-                <form className="was-validated textbox">
+                {/* <form className="was-validated textbox">
                     <div className="mb-3">
                         <label for="validationTextarea">New Chirp</label>
                         <textarea
@@ -34,21 +30,20 @@ class Textbox extends React.Component {
                             placeholder="What's chirpin'?"
                             text=""
                             value={this.state.text}
-                            onChange={(e) => { this.handleChange(e) }}
-                            required>
-                        </textarea>
+                            onChange={e => this.handleChange(e)}
+                            required />
                         <div className="invalid-feedback promptText">
                             Enter your chirp.
                         </div>
                         <button
                             className="button"
-                            onClick={() => { this.handleClick() }}
+                            onClick={e => { this.handleClick(e) }}
                         >Post Chirp</button>
                     </div>
-                </form>
+                </form> */}
             </>
         );
     }
 }
 
-export default Textbox;
+export default WriteNewChirp;
