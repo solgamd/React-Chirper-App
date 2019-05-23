@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import Navbar from './Navbar';
-// import WriteNewChirp from './WriteNewChirp';
 import ChirpCard from './ChirpCard';
-import Icon from './Icon';
+import Logo from './Logo';
 
 
 class App extends Component {
@@ -14,6 +13,7 @@ class App extends Component {
       text: ''
     }
   }
+
   handleChange(e) {
     this.setState({ text: e.target.value })
   }
@@ -23,12 +23,11 @@ class App extends Component {
     console.log(this.state.text);
     let newArray = this.state.messages;   //Need to put this.state.messages into a variable; cannot change this.state in any way
     newArray.push(this.state.text);
-    this.setState({ messages: newArray, text:'' })
-
+    this.setState({ messages: newArray, text: '' })
   }
 
   componentDidMount() {
-    let data = this.state.messages;     // HOW DO I CHANGE THIS TO AN EMPTY ARRAY ???
+    let data = this.state.messages;
     this.setState({ messages: data })  //Will update message array with what data represents
   }
 
@@ -42,7 +41,7 @@ class App extends Component {
         <Navbar />
         <main className="container">
           <section className="col shadow">
-            <Icon />
+            <Logo />
             <h1>What's chirpin'?</h1>
             <div className="card">
               {/* // WriteNewChirp */}
@@ -54,7 +53,7 @@ class App extends Component {
                     placeholder="What's chirpin'?"
                     value={this.state.text}
                     onChange={e => this.handleChange(e)}
-                    />
+                  />
                   <button
                     className="button"
                     onClick={e => this.handleClick(e)}
@@ -72,7 +71,6 @@ class App extends Component {
       </>
     )
   };
-
 }
 
 export default App;
